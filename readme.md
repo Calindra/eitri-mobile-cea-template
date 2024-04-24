@@ -49,7 +49,6 @@ Você deverá criar as variáveis globais para que a pipeline rode corretamente 
   - `SONAR_PROJECT_NAME`: "app-eitri-cea-seueitriapp"
 > Esta variável deve conter o nome do projeto de seu eitriapp no sonar.
 
-
 ### Pipeline
 
 A configuração do pipeline para seu repositório precisa ser realizada pelo time de infra-estrutura da C&A.
