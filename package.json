@@ -1,0 +1,36 @@
+{
+  "name": "app-eitri-cea-seueitriapp",
+  "version": "1.0.0",
+  "description": "\"Repositório do seueitriapp\"",
+  "main": "eitri-app.conf.js",
+  "scripts": {
+    "test": "jest --coverage --coverageReporters=cobertura",
+    "test:sonar": "jest --coverage"
+  },
+  "author": "",
+  "license": "ISC",
+  "jest": {
+    "testResultsProcessor": "jest-sonar-reporter",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "rootDir": "src",
+    "testRegex": ".*\\.spec\\.(t|j)s$",
+    "collectCoverageFrom": [
+      "**/*.(t|j)s"
+    ],
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "jestSonar": {
+    "reportPath": "coverage",
+    "reportFile": "test-reporter.xml",
+    "indent": 4
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-sonar-reporter": "^2.0.0"
+  }
+}
