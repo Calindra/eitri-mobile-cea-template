@@ -7,3 +7,5 @@ folder.hash
 .dccache
 /.dccache
 teste
+package-lock.json
+coverage
