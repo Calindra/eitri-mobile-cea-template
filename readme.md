@@ -6,6 +6,18 @@ Este é o eitriapp padrão para a aplicação da C&A. Neste boilerplate você j�
 - Integração com Azure DevOps da C&A
 - O projeto de eitriapp envolopado com node e com as dependencias necessárias para execução de testes automatizados
 
+# Para rodar o projeto
+
+Você precisará de:
+
+1. O app da C&A em versão de QA/HML (ou outra não produtiva)
+2. Seguir os [passos de instalação da eitri-cli](https://docs.eitri.tech/pt/eitri-cli/)
+3. Logar com sua conta Eitri usando o comando `eitri login`
+4. Dentro da pasta do projeto rodar o comando `eitri start`
+5. Escaneie o QRCode apresentado na sua tela com a câmera presente no menu do app da C&A no item "Eitri"
+
+> Seu eitriapp irá rodar a partir do código disponível localmente com hotreload à medida que você salva seus arquivos.
+
 ## Integrando com Azure DevOps
 
 A integração com o Azure DevOps da C&A inclui algumas configurações que precisam ser feitas para que seu eitriapp seja publicado corretamente. São elas:
