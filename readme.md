@@ -22,40 +22,33 @@ Você precisará de:
 
 A integração com o Azure DevOps da C&A inclui algumas configurações que precisam ser feitas para que seu eitriapp seja publicado corretamente. São elas:
 
-### Criação das variáveis de credenciais do Eitri
+### Variáveis para integração
 
-Para que a integração com a plataforma Eitri funcione corretamente, você precisará setar 2 variáveis para uso no pipeline:
+Para que a integração com a plataforma Eitri com a pipeline C&A funcione corretamente, algumas variáveis de ambiente devem estar setadas.
 
-- `EITRI_CLI_CLIENT_ID`: clientId do usuário a ser utilizado para CI
-- `EITRI_CLI_CLIENT_SECRET`: clientSecret do usuário a ser utilizado para CI
+#### Variáveis já configuradas por padrão
 
-> OBS: As variáveis precisam usar EXATAMENTE estes nomes.
+A maioria das variáveis necessárias já vem configurada nas variable groups já definidas no `azure-pipeline.yaml`:
 
-Estas credenciais podem ser obtidas no [console do eitri](https://console.eitri.tech)
-
-### Criação de outras variáveis
-
-#### Variável de ambiente
-
-Esta variável deve ser criada para cada ambiente, contendo o id do ambiente respectivo à ser publicado na plataforma Eitri para a aplicação da C&A.
-
-Para o ambiente de **dev**:
-
-- `ENVIROMENT_ID`: 4ef3af42-c227-4b78-a148-55a6af7a6a24
-
-Para o ambiente de **prod**:
-
-- `ENVIROMENT_ID`: a988de1d-44ef-46d0-9c11-eb3b8078ce1f
-
-#### Variáveis globais
-
-Você deverá criar as variáveis globais para que a pipeline rode corretamente no projeto.
-
+- app-eitri-cea-common
+  - `EITRI_CLI_CLIENT_ID`: clientId do usuário a ser utilizado para CI
+  - `EITRI_CLI_CLIENT_SECRET`: clientSecret do usuário a ser utilizado para CI
   - `NODEJS_VERSION`: "18.x"
   - `COVERAGE_REPORT_PATH`: $(Build.SourcesDirectory)/coverage/cobertura-coverage.xml
   - `SONAR_PATH_SOURCES`: "src"
   - `SONAR_EXCLUSIONS`: "**/node_modules/**,**/coverage/**, **/_devops_/**"	
   - `SONAR_REPORT_PATH`: "coverage/lcov.info"
+
+- app-eitri-cea-dev
+  - `ENVIROMENT_ID`: 4ef3af42-c227-4b78-a148-55a6af7a6a24
+
+- app-eitri-cea-prd
+  - `ENVIROMENT_ID`: a988de1d-44ef-46d0-9c11-eb3b8078ce1f
+
+#### Variáveis que exigem configuração manual
+
+**Você precisará substituir** a variable group `app-eitri-cea-seueitriapp-common` pela variable group de seu projeto contendo o nome e a key do projeto no sonar:
+
   - `SONAR_PROJECT_KEY`: "ceabr_app-eitri-cea-seueitriapp"
 > Esta variável deve conter a key do projeto de seu eitriapp no sonar.
   - `SONAR_PROJECT_NAME`: "app-eitri-cea-seueitriapp"
