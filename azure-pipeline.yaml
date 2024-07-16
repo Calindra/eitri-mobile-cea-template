@@ -7,18 +7,18 @@ trigger:
 
 variables:
   - group: app-eitri-cea-common
-  - group: app-eitri-cea-seueitriapp-common
+  - group: app-eitri-seueitriapp-common
   - ${{ if or(eq(variables['Build.SourceBranchName'], 'master'), contains(variables['Build.SourceBranch'], 'refs/tags/')) }}:
-    - group: 'app-eitri-cea-prd'
+      - group: "app-eitri-cea-prd"
   - ${{ else }}:
-    - group: 'app-eitri-cea-dev'
+      - group: "app-eitri-cea-dev"
 
 resources:
   repositories:
-  - repository: templates
-    type: git
-    name: Tech/arq-devops-template-pipelines
-    ref: 'refs/heads/master'
+    - repository: templates
+      type: git
+      name: Tech/arq-devops-template-pipelines
+      ref: "refs/heads/master"
 
 extends:
   template: app/eitri/azure-pipeline.yaml@templates
