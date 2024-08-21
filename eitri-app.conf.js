@@ -32,10 +32,10 @@ module.exports = {
   /**
    * Here on this line, you determine the version of the Luminus component library you will use.
    */
-  "eitri-luminus": "@cea-components:1.4.19",
+  "eitri-luminus": "@cea-components:1.5.57",
   /**
    * Here on this line, you determine the version of the Bifrost API you will use.
    */
-  "eitri-bifrost": "2.4.0",
+  "eitri-bifrost": "2.8.0",
   "eitri-commons": "1.0.1"
 }
