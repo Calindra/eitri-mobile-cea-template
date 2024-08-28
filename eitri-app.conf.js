@@ -37,5 +37,5 @@ module.exports = {
    * Here on this line, you determine the version of the Bifrost API you will use.
    */
   "eitri-bifrost": "2.8.0",
-  "eitri-commons": "1.0.1"
+  "eitri-commons": "2.0.0"
 }
