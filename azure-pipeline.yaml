@@ -22,3 +22,5 @@ resources:
 
 extends:
   template: app/eitri/azure-pipeline.yaml@templates
+  parameters:
+    PUSH_PARAMETERS: '--verbose'
